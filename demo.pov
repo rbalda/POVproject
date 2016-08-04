@@ -1,4 +1,4 @@
-#include "colors.inc"
+#include "colors.inc" //including some files
 #include "textures.inc"
 #include "stones.inc"
  plane{
