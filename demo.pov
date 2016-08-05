@@ -31,4 +31,22 @@
     rotate <-10,20,360*clock>    
     translate <-10,20,0>
  }
+ 
+ box {
+     <0,0,0>,
+     <4,4,4>
+     pigment{ Red }
+     rotate <-10,20,360*clock>
+     translate <-20,10,10>
+}
+
+
+torus {
+    4, 1
+    translate <5,5,5>
+    pigment { Blue }
+    rotate <-10,20,360*clock>
+}
+
+
  light_source { <-30, 30, 0> color White}
