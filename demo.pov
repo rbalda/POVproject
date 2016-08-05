@@ -9,6 +9,7 @@
                color Black }
      scale 8
    }
+   
  }
  background { color Cyan }
  camera {
@@ -22,8 +23,12 @@
    }
  }
  cone {
-    <-10, 25, 0>, 0    
-    <-10, 15, 0>, 3    
+    <0,5,0>,0
+    <0,-5,0>,3
+    //<-10, 25, 0>, 0    
+    //<-10, 15, 0>, 3    
     texture { T_Stone25 scale 4 }
+    rotate <-10,20,360*clock>    
+    translate <-10,20,0>
  }
  light_source { <-30, 30, 0> color White}
