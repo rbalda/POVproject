@@ -21,6 +21,7 @@
    texture {
      pigment { color Yellow }
    }
+   //finish {reflection 0.2}
  }
  cone {
     <0,5,0>,0
@@ -30,6 +31,9 @@
     texture { T_Stone25 scale 4 }
     rotate <-10,20,360*clock>    
     translate <-10,20,0>
+    finish { phong 0.9 phong_size 40  // A highlight
+             //reflection 0.2  // Glass reflects a bit
+           }
  }
  
  box {
@@ -43,9 +47,11 @@
 
 torus {
     4, 1
-    translate <5,5,5>
+    translate <0,0,0>
     pigment { Blue }
-    rotate <-10,20,360*clock>
+    rotate <90,0,0>
+    rotate <0,360*clock,0>
+    translate <5,5,5>
 }
 
 
