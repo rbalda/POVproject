@@ -1,0 +1,16 @@
+#!/usr/bin/bash
+
+if  [ 0 -ne $(ls *.png 2>/dev/null | wc -w) ]; then 
+    rm -r *.png
+else 
+    echo "Fichero listo" 
+fi
+
+if  [ 1 -eq $(ls *.gif 2>/dev/null |wc -w) ];then
+    rm *.gif
+else
+    echo "Iniciando generacion de gif"
+fi
+
+FILE=$(ls| grep .ini)
+povanimation "$FILE" gif

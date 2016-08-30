@@ -1,0 +1,49 @@
+#!/usr/bin/bash
+
+DIR=$(pwd)
+FILE=$1
+EXT=$2
+FILENAME=$(echo "$FILE"|cut -d'.' -f1)
+echo "$DIR"
+echo "$FILE"
+echo "$FILENAME"
+
+cd "$DIR"
+
+if  [ 0 -eq $(ls *.png 2>/dev/null | wc -w) ]; then
+    povray "$FILE"
+else
+    echo "Imagenes ya existen"
+fi
+
+if [ "$EXT" = "mp4" ]; then
+   if [ -e "$FILENAME.mp4" ]; then
+       echo "el archivo ya existe"
+   else
+       ffmpeg -framerate 10 -i "$FILENAME%02d.png" -c:v libx264 -r 30 -pix_fmt yuv420p "$FILENAME.mp4"
+       xdg-open "$FILENAME.mp4"
+   fi
+elif [ "$EXT" = "gif" ]; then
+   if [ -e "$FILENAME.gif" ]; then
+       echo "el archivo gif ya existe"
+   else
+       ffmpeg -framerate 10 -i "$FILENAME%02d.png" "$FILENAME.gif"
+       xdg-open "$FILENAME.gif"
+   fi
+else
+   echo "no se envio un formato valido"
+fi
+
+
+
+
+
+
+
+
+
+#3807  ffmpeg -framerate 1/5 -i demo%02d.png -c:v libx264 -r 30 -pix_fmt yuv420p out.mp4
+#3810  ffmpeg -framerate 1 -i demo%02d.png -c:v libx264 -r 30 -pix_fmt yuv420p out.mp4
+#3812  ffmpeg -framerate 10 -i demo%02d.png -c:v libx264 -r 30 -pix_fmt yuv420p out.mp4
+#3814  ffmpeg -framerate 10 -i demo%02d.png out.gif
+

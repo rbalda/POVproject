@@ -2,14 +2,15 @@
 #include "textures.inc"
 #include "stones.inc"
  plane{
-   <0,1,0>,0
+   <0,1,0>,2
    texture {
      pigment { checker
                color White
-               color Black }
-     scale 8
+               color Black
+              }
+     scale 5
    }
-   
+
  }
  background { color Cyan }
  camera {
@@ -26,16 +27,15 @@
  cone {
     <0,5,0>,0
     <0,-5,0>,3
-    //<-10, 25, 0>, 0    
-    //<-10, 15, 0>, 3    
+
     texture { T_Stone25 scale 4 }
-    rotate <-10,20,360*clock>    
+    rotate <-10,20,360*clock>
     translate <-10,20,0>
     finish { phong 0.9 phong_size 40  // A highlight
              //reflection 0.2  // Glass reflects a bit
            }
  }
- 
+
  box {
      <-2,-2,-2>,
      <2,2,2>
@@ -54,5 +54,18 @@ torus {
     translate <5,5,5>
 }
 
+#declare objeto1 = object{
+  merge{
+    cone     { < 0, 13.9, 0>  2.8
+               < 0, 18.0, 0>  0.8 }
+    sphere   { < 0, 12.4, 0>  3.2 }
+  }
+}
+
+object { objeto1
+  texture {  Cherry_Wood }
+  rotate y *-30
+  translate < 10, 5, 10>
+}
 
  light_source { <-30, 30, 0> color White}
