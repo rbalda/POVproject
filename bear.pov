@@ -48,14 +48,6 @@ light_source {
 }
 #declare lampTarget1= vrotate(<-4.076,-1.005,-5.904>,<0.6503,0.05522,1.866>);
 
-//--Rainbows--
-
-
-//--Special Curves--
-
-
-//--Material Definitions--
-
 #default{ pigment{ color rgb 0.8 }}
 //--translation of spec and mir levels for when no map influences them--
 #declare shader_ = finish {
@@ -1805,8 +1797,8 @@ mesh2 {
         <227,227,227>,
         <26,26,26>
     }
-    radiosity { 
-        importance 0.5 
+    radiosity {
+        importance 0.5
     }
 }
 
@@ -4741,8 +4733,8 @@ mesh2 {
         <60,60,60>,
         <206,206,206>
     }
-    radiosity { 
-        importance 0.5 
+    radiosity {
+        importance 0.5
     }
 }
 
@@ -7677,8 +7669,8 @@ mesh2 {
         <170,170,170>,
         <170,170,170>
     }
-    radiosity { 
-        importance 0.5 
+    radiosity {
+        importance 0.5
     }
 }
 
@@ -10613,30 +10605,30 @@ mesh2 {
         <170,170,170>,
         <170,170,170>
     }
-    radiosity { 
-        importance 0.5 
+    radiosity {
+        importance 0.5
     }
 }
 //----Blender Object Name:OBSphere----
-object { 
+object {
     DATASphere
     matrix <1.000000, 0.000000, 0.000000,  0.000000, -0.000000, -1.000000,  0.000000, 1.000000, -0.000000,  0.000000, 0.000000, 0.000000>
 
 }
 //----Blender Object Name:OBSphere_002----
-object { 
+object {
     DATASphere_002
     matrix <0.100000, 0.000000, 0.000000,  0.000000, -0.000000, -0.300000,  0.000000, 0.300000, -0.000000,  -0.003550, 0.726510, 0.677580>
 
 }
 //----Blender Object Name:OBSphere_001----
-object { 
+object {
     DATASphere_001
     matrix <0.100000, 0.000000, 0.000000,  0.000000, -0.000000, -0.300000,  0.000000, 0.300000, -0.000000,  0.003551, 0.726513, -0.677580>
 
 }
 //----Blender Object Name:OBCylinder----
-object { 
+object {
     DATACylinder_001
     matrix <-0.000000, -0.000000, -0.301560,  0.000000, -0.210366, 0.000000,  -0.170095, -0.000000, 0.000000,  -0.865570, 0.074230, -0.000000>
 
